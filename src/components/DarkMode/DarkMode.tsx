@@ -1,17 +1,18 @@
-import React from 'react'
-import { Switch } from 'antd'
-import { IDarkModeProps } from '../../containers/DarkModeContainer'
+import React from 'react';
+import { Switch } from 'antd';
+import { useDarkModeConnect } from '../../useConnect/darkMode';
 
-const DarkMode = (props: IDarkModeProps) => {
+const DarkMode = () => {
+  const { setDarkMode } = useDarkModeConnect();
   const handleChange = (checked: boolean) => {
-    props.setDarkMode(checked)
-  }
+    setDarkMode(checked);
+  };
 
   return (
     <Switch onChange={handleChange}>
       Dark Mode
     </Switch>
-  )
-}
+  );
+};
 
-export default DarkMode
+export default DarkMode;
