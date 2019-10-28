@@ -10,7 +10,7 @@ const Item = (props: IProps) => {
   const { item } = props
   const [isEdit, setEdit] = useState(false)
   const [value, setValue] = useState(item.text)
-  const [completed, setCompleted] = useState(false)
+  const [completed, setCompleted] = useState(item.completed)
 
   const handleEdit = () => {
     setEdit(true)

@@ -17,4 +17,4 @@ const ToDoList = (props: IListProps) => (
     </List>
   )
 
-export default ToDoList
+export default React.memo(ToDoList)
