@@ -4,17 +4,17 @@ import { IListProps } from '../../containers/ListContainer'
 import Item from '../Item/IItem'
 
 const ToDoList = (props: IListProps) => (
-    <List>
-      {props.todos.map(item => (
-        <Item
-          key={item.id}
-          item={item}
-          editTodo={props.editTodo}
-          toggleTodo={props.toggleTodo}
-          deleteTodo={props.deleteTodo}
-        />
-      ))}
-    </List>
-  )
+  <List>
+    {props.todos.map(item => (
+      <Item
+        key={item.id}
+        item={item}
+        editTodo={props.editTodo}
+        toggleTodo={props.toggleTodo}
+        deleteTodo={props.deleteTodo}
+      />
+    ))}
+  </List>
+)
 
-export default React.memo(ToDoList)
+export default ToDoList
