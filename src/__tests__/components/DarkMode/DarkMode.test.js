@@ -15,7 +15,7 @@ describe('DarkMode component', () => {
     expect(wrapper.asFragment()).toMatchSnapshot();
   });
 
-  it('DarkMode state should be true after click', async () => {
+  it('DarkMode state should be true after click', () => {
     fireEvent.click(wrapper.getByTestId('darkMode'))
     expect(store.getState().darkMode).toBe(true)
   })
