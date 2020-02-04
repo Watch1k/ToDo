@@ -4,7 +4,7 @@ import { completeIconStyles, completeStyles, confirmStyles, deleteStyles, editSt
 import { IListDispatchProps } from '../../containers/ListContainer'
 import { ITodo } from '../../interfaces/state'
 
-type IProps = IListDispatchProps & { item: ITodo }
+export type IProps = IListDispatchProps & { item: ITodo }
 
 const Item = (props: IProps) => {
   const { item } = props

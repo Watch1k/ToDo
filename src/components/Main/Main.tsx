@@ -5,12 +5,10 @@ import FormContainer from '../../containers/FormContainer';
 import ListContainer from '../../containers/ListContainer';
 import DarkMode from '../DarkMode/DarkMode';
 import Filter from '../Filter/Filter';
+import { Strings } from '../../enums/strings';
 
 export const Main = () => (
   <Layout style={layoutStyles}>
-    <Row type="flex" justify="center" style={{ margin: '30px 0' }}>
-      <DarkMode />
-    </Row>
     <Divider>Create task</Divider>
     <Row type="flex" justify="center">
       <FormContainer />
@@ -18,9 +16,15 @@ export const Main = () => (
     <Row type="flex" justify="center" style={{ margin: '30px 0' }}>
       <Filter />
     </Row>
+
     <Divider>List of tasks</Divider>
     <Row type="flex" justify="center">
       <ListContainer />
+    </Row>
+
+    <Divider>{Strings.darkMode}</Divider>
+    <Row type="flex" justify="center" style={{ margin: '30px 0' }}>
+      <DarkMode/>
     </Row>
   </Layout>
 )

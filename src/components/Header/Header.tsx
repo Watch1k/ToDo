@@ -4,9 +4,13 @@ import { headerStyles, titleStyles } from './HeaderStyles';
 
 const { Title } = Typography;
 
-const Header = () => (
-  <header style={headerStyles}>
-    <Title style={titleStyles}>ToDo List</Title>
+export type IProps = {
+  title: string
+}
+
+const Header = ({ title }: IProps) => (
+  <header style={headerStyles} data-testid="header">
+    <Title style={titleStyles}>{title}</Title>
   </header>
 );
 

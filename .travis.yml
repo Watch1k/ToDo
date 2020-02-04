@@ -1,0 +1,12 @@
+# specify programming language
+language: node_js
+node_js: 10.18.1
+cache: npm
+
+# installation phase
+install:
+  - npm i
+
+# tasks phase
+script:
+  - npm run test

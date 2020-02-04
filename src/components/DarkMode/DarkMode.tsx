@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch } from 'antd';
 import { useDarkModeConnect } from '../../useConnect/darkMode';
+import { darkModeStyles } from './DarkModeStyles';
 
 const DarkMode = () => {
   const { setDarkMode } = useDarkModeConnect();
@@ -9,10 +10,10 @@ const DarkMode = () => {
   };
 
   return (
-    <Switch onChange={handleChange}>
-      Dark Mode
-    </Switch>
+    <div style={darkModeStyles}>
+      <Switch onChange={handleChange} data-testid="darkMode"/>
+    </div>
   );
 };
 
-export default DarkMode
+export default DarkMode;

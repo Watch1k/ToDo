@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DarkMode component Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; flex-direction: column; align-items: center;"
+  >
+    <button
+      aria-checked="false"
+      class="ant-switch"
+      data-testid="darkMode"
+      role="switch"
+      type="button"
+    >
+      <span
+        class="ant-switch-inner"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;

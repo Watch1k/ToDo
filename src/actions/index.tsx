@@ -44,8 +44,7 @@ export interface ISetDarkMode extends Redux.Action {
   darkMode: boolean
 }
 
-export const setDarkMode = (darkMode: boolean) =>
-  ({
-    type: SET_DARK_MODE,
-    darkMode,
-  })
+export const setDarkMode = (darkMode: boolean) => ({
+  type: SET_DARK_MODE,
+  darkMode,
+})
