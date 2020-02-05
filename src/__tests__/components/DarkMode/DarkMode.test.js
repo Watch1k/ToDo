@@ -5,7 +5,11 @@ import { renderWithRedux } from '../../../utils/tests'
 import DarkMode from '../../../components/DarkMode/DarkMode'
 
 describe('DarkMode component', () => {
-  const wrapper = renderWithRedux(<DarkMode />, store);
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = renderWithRedux(<DarkMode />, store);
+  })
 
   it('Renders', () => {
     expect(wrapper.getByTestId('darkMode')).toBeInTheDocument();
