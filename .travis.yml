@@ -19,5 +19,5 @@ script:
 deploy:
   provider: surge
   skip_cleanup: true
-  project: ./dist/
+  project: ./build/
   domain: todo.surge.sh
