@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Header from '../../../components/Header/Header'
-import { Strings } from '../../../enums/strings'
+import Header from './'
+import { Strings } from '../../enums/strings'
 
 describe('Header component', () => {
   let wrapper

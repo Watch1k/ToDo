@@ -1,8 +1,8 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react'
-import { store } from '../../../store'
-import { renderWithRedux } from '../../../utils/tests'
-import DarkMode from '../../../components/DarkMode/DarkMode'
+import { store } from '../../store'
+import { renderWithRedux } from '../../utils/tests'
+import DarkMode from './'
 
 describe('DarkMode component', () => {
   let wrapper

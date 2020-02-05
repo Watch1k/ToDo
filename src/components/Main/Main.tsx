@@ -3,8 +3,8 @@ import { Divider, Layout, Row } from 'antd';
 import { layoutStyles } from './MainStyles';
 import FormContainer from '../../containers/FormContainer';
 import ListContainer from '../../containers/ListContainer';
-import DarkMode from '../DarkMode/DarkMode';
-import Filter from '../Filter/Filter';
+import DarkMode from '../DarkMode';
+import Filter from '../Filter';
 import { Strings } from '../../enums/strings';
 
 export const Main = () => (
