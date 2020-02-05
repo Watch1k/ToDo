@@ -3,10 +3,6 @@ language: node_js
 node_js: 10.18.1
 cache: npm
 
-branches:
-  only:
-    - master
-
 # installation phase
 install:
   - npm i
@@ -20,4 +16,4 @@ deploy:
   provider: surge
   skip_cleanup: true
   project: ./build/
-  domain: todo.surge.sh
+  domain: watch1k-todo.surge.sh
