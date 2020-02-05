@@ -10,3 +10,10 @@ install:
 # tasks phase
 script:
   - npm run test
+  - npm run build
+
+deploy:
+  provider: surge
+  skip_cleanup: true
+  project: ./dist/
+  domain: todo.surge.sh
