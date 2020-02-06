@@ -21,7 +21,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,8 +44,21 @@
     "@testing-library/react": "^9.4.0",
     "@types/jest": "24.0.19",
     "babel-plugin-import": "^1.12.2",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
     "redux-devtools-extension": "^2.13.8",
     "ts-jest": "^25.1.0",
     "typescript": "3.6.4"
+  },
+  "lint-staged": {
+    "*.{js, jsx}": [
+      "node_modules/.bin/eslint --max-warnings=0",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
