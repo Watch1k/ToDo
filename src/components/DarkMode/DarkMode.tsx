@@ -3,6 +3,8 @@ import { Switch } from 'antd'
 import { useDarkModeConnect } from '../../useConnect/darkMode'
 import { darkModeStyles } from './DarkModeStyles'
 
+console.log('test')
+
 const DarkMode = () => {
   const { setDarkMode } = useDarkModeConnect()
   const handleChange = (checked: boolean) => {
