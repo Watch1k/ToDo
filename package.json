@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^2.1.1",
     "@types/node": "12.11.7",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
@@ -53,7 +54,8 @@
     "prettier-eslint": "^9.0.1",
     "redux-devtools-extension": "^2.13.8",
     "ts-jest": "^25.1.0",
-    "typescript": "3.6.4"
+    "typescript": "3.6.4",
+    "webpack-bundle-analyzer": "^3.6.0"
   },
   "husky": {
     "hooks": {
