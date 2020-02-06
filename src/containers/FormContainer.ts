@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
-import ToDoForm from '../components/Form/Form'
+import ToDoForm from '../components/Form'
 import { bindActionCreators, Dispatch } from 'redux'
 import { IState } from '../interfaces/state'
 
@@ -12,6 +12,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   ...bindActionCreators({ addTodo }, dispatch),
 })
 
-export type IToDoFormProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
+export type IToDoFormProps = ReturnType<typeof mapStateToProps> &
+  ReturnType<typeof mapDispatchToProps>
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDoForm)

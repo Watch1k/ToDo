@@ -1,7 +1,7 @@
 import React from 'react'
 import { List } from 'antd'
 import { IListProps } from '../../containers/ListContainer'
-import Item from '../Item/Item'
+import Item from '../Item'
 
 const ToDoList = (props: IListProps) => (
   <List>

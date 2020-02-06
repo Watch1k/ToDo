@@ -15,13 +15,16 @@ module.exports = override(
     const alias = config.resolve.alias || {}
     alias['@ant-design/icons/lib/dist$'] = path.resolve(
       __dirname,
-      './src/icons.js'
+      './src/icons.ts'
     )
     config.resolve.alias = alias
     return config
   },
-  addBundleVisualizer({
-    analyzerMode: 'static',
-    reportFilename: 'report.html',
-  })
+  config =>
+    process.env.BUNDLE_VISUALIZE === 1
+      ? addBundleVisualizer({
+          analyzerMode: 'static',
+          reportFilename: 'report.html',
+        })
+      : config
 )

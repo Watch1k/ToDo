@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { IState } from '../interfaces/state'
-import ToDoList from '../components/List/List'
+import ToDoList from '../components/List'
 import { bindActionCreators, Dispatch } from 'redux'
 import { deleteTodo, editTodo, toggleTodo } from '../actions'
 import { createSelector } from 'reselect'
@@ -22,7 +22,7 @@ const filterTodos = createSelector(
       default:
         return todos
     }
-  },
+  }
 )
 
 const mapStateToProps = (state: IState) => ({
@@ -30,11 +30,14 @@ const mapStateToProps = (state: IState) => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  ...bindActionCreators({
-    editTodo,
-    toggleTodo,
-    deleteTodo,
-  }, dispatch),
+  ...bindActionCreators(
+    {
+      editTodo,
+      toggleTodo,
+      deleteTodo,
+    },
+    dispatch
+  ),
 })
 
 export type IListDispatchProps = ReturnType<typeof mapDispatchToProps>
