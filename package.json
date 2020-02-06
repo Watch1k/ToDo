@@ -57,12 +57,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index --again"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js, jsx}": [
+    "*.{js, jsx, ts, tsx}": [
       "node_modules/.bin/eslint --max-warnings=0",
       "prettier --write",
       "git add"
