@@ -8,11 +8,11 @@ describe('Header component', () => {
   const title = Strings.header
 
   beforeEach(() => {
-    wrapper = render(<Header title={title}/>)
+    wrapper = render(<Header title={title} />)
   })
 
   it('Renders', () => {
-    expect(wrapper.getByTestId('header')).toBeInTheDocument();
+    expect(wrapper.getByTestId('header')).toBeInTheDocument()
     expect(wrapper.getByText(title)).toBeInTheDocument()
   })
 

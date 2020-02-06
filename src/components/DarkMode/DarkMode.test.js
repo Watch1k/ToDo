@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { fireEvent } from '@testing-library/react'
 import { store } from '../../store'
 import { renderWithRedux } from '../../utils/tests'
@@ -8,19 +8,19 @@ describe('DarkMode component', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = renderWithRedux(<DarkMode />, store);
+    wrapper = renderWithRedux(<DarkMode />, store)
   })
 
   it('Renders', () => {
-    expect(wrapper.getByTestId('darkMode')).toBeInTheDocument();
-  });
+    expect(wrapper.getByTestId('darkMode')).toBeInTheDocument()
+  })
 
   it('Matches snapshot', () => {
-    expect(wrapper.asFragment()).toMatchSnapshot();
-  });
+    expect(wrapper.asFragment()).toMatchSnapshot()
+  })
 
   it('DarkMode state should be true after click', () => {
     fireEvent.click(wrapper.getByTestId('darkMode'))
     expect(store.getState().darkMode).toBe(true)
   })
-});
+})
