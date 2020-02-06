@@ -11,7 +11,7 @@ const DarkMode = () => {
 
   return (
     <div style={darkModeStyles}>
-      <Switch onChange={handleChange} data-testid="darkMode" />
+      <Switch onChange={handleChange} data-testid='darkMode' />
     </div>
   )
 }
