@@ -13,7 +13,7 @@ const DarkMode = () => {
     <div style={darkModeStyles}>
       <Switch onChange={handleChange} data-testid='darkMode' />
     </div>
-  )
+  );
 }
 
-export default DarkMode
+export default DarkMode;
