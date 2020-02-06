@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch } from 'antd'
 import { useDarkModeConnect } from '../../useConnect/darkMode';
-import { darkModeStyles } from './DarkModeStyles'
+import { darkModeStyles } from './DarkModeStyles';
 
 const DarkMode = () => {
   const { setDarkMode } = useDarkModeConnect()
