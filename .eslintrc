@@ -8,6 +8,7 @@
       2,
       "never"
     ],
+    "quotes": [2, "single"],
     "no-unexpected-multiline": "error",
     "react/jsx-filename-extension": [
       1,
