@@ -4,7 +4,7 @@ import { IListProps } from '../../containers/ListContainer'
 import Item from '../Item'
 
 const ToDoList = (props: IListProps) => (
-  <List>
+  <List data-testid='list'>
     {props.todos.map(item => (
       <Item
         key={item.id}

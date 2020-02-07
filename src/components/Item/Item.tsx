@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import { Button, Icon, Input, List } from 'antd'
-import { completeIconStyles, completeStyles, confirmStyles, deleteStyles, editStyles, inputStyles } from './ItemStyles'
+import {
+  completeIconStyles,
+  completeStyles,
+  confirmStyles,
+  deleteStyles,
+  editStyles,
+  inputStyles,
+} from './ItemStyles'
 import { IListDispatchProps } from '../../containers/ListContainer'
 import { ITodo } from '../../interfaces/state'
 
@@ -34,52 +41,63 @@ const Item = (props: IProps) => {
     setCompleted(completed => !completed)
   }
 
-  const getActionButtons: () => React.ReactElement[] = () => ([
-    isEdit
-      ? (<Button
-          key="btn_1"
-          icon="check"
-          onClick={handleConfirm}
-          style={confirmStyles}
-        />
-      ) : (<Button
-        key="btn_2"
-        icon="edit"
+  const getActionButtons: () => React.ReactElement[] = () => [
+    isEdit ? (
+      <Button
+        key='btn_1'
+        icon='check'
+        onClick={handleConfirm}
+        style={confirmStyles}
+      />
+    ) : (
+      <Button
+        key='btn_2'
+        icon='edit'
+        data-testid='item-edit'
         onClick={handleEdit}
         style={editStyles}
-      />)
-    ,
+      />
+    ),
     <Button
-      key="btn_3"
-      icon="delete"
+      key='btn_3'
+      icon='delete'
       style={deleteStyles}
       onClick={handleDelete}
     />,
     <Button
-      key="btn_4"
-      type="link"
+      key='btn_4'
+      type='link'
       style={completeStyles}
       onClick={handleCompleted}
     >
       <Icon
-        type="check-circle"
+        type='check-circle'
         theme={completed ? 'twoTone' : 'outlined'}
         style={completeIconStyles}
-        twoToneColor="#52c41a"
+        twoToneColor='#52c41a'
         onClick={handleCompleted}
       />
     </Button>,
-  ])
+  ]
 
   return (
-    <List.Item
-      actions={getActionButtons()}
-    >
-      <List.Item.Meta title={
-        isEdit
-          ? (<Input style={inputStyles} value={value} onChange={handleChange} />)
-          : (<p style={inputStyles}>{value}</p>)
-      } />
+    <List.Item actions={getActionButtons()} data-testid='list-item'>
+      <List.Item.Meta
+        title={
+          isEdit ? (
+            <Input
+              data-testid='item-input'
+              style={inputStyles}
+              value={value}
+              onChange={handleChange}
+            />
+          ) : (
+            <p data-testid='item-p' style={inputStyles}>
+              {value}
+            </p>
+          )
+        }
+      />
     </List.Item>
   )
 }

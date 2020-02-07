@@ -1,5 +1,12 @@
 import * as Redux from 'redux'
-import { ADD_TODO, DELETE_TODO, EDIT_TODO, SET_DARK_MODE, SET_VISIBILITY_FILTER, TOGGLE_TODO } from '../constants'
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  EDIT_TODO,
+  SET_DARK_MODE,
+  SET_VISIBILITY_FILTER,
+  TOGGLE_TODO,
+} from '../constants'
 import { IVisibilityFilter } from '../interfaces/state'
 
 export interface ITodoAction extends Redux.Action {
@@ -7,11 +14,9 @@ export interface ITodoAction extends Redux.Action {
   id: number
 }
 
-let nextTodoId = 0
-
 export const addTodo = (text: string) => ({
   type: ADD_TODO,
-  id: nextTodoId++,
+  id: new Date().getTime(),
   text,
 })
 
