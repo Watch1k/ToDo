@@ -1,14 +1,14 @@
 import React from 'react'
-import Header from './components/Header'
 import Main from './components/Main/Main'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { Strings } from './enums/strings'
+import HeaderContainer from './containers/HeaderContainer'
 
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Header title={Strings.header} />
+      <HeaderContainer title={Strings.header} />
       <Main />
     </Provider>
   )

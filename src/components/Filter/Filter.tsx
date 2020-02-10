@@ -3,7 +3,7 @@ import { Card, Radio } from 'antd'
 import { VisibilityFilters } from '../../constants'
 import { RadioChangeEvent } from 'antd/es/radio'
 import { filterStyles } from './FilterStyles'
-import { useFilterConnect } from '../../useConnect/filter'
+import { useFilterConnect } from '../../useConnect'
 
 const Filter = () => {
   const { visibilityFilter, setVisibilityFilter } = useFilterConnect()

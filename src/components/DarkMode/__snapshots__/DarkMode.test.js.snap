@@ -6,8 +6,8 @@ exports[`DarkMode component Matches snapshot 1`] = `
     style="display: flex; flex-direction: column; align-items: center;"
   >
     <button
-      aria-checked="false"
-      class="ant-switch"
+      aria-checked="true"
+      class="ant-switch ant-switch-checked"
       data-testid="darkMode"
       role="switch"
       type="button"

@@ -19,8 +19,12 @@ describe('DarkMode component', () => {
     expect(wrapper.asFragment()).toMatchSnapshot()
   })
 
+  it('DarkMode enabled by default', () => {
+    expect(wrapper.getByTestId('darkMode').checked).toBe(true)
+  })
+
   it('DarkMode state should be true after click', () => {
     fireEvent.click(wrapper.getByTestId('darkMode'))
-    expect(store.getState().darkMode).toBe(true)
+    expect(wrapper.getByTestId('darkMode').checked).toBe(false)
   })
 })

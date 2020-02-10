@@ -12,21 +12,25 @@ const ToDoForm = (props: IToDoFormProps) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (!value) return
     props.addTodo(value)
+    // Clear input
+    setValue('')
   }
 
   return (
-    <Form layout="inline" onSubmit={handleSubmit}>
+    <Form data-testid='form' layout='inline' onSubmit={handleSubmit}>
       <Form.Item>
         <Input
           value={value}
-          prefix={<Icon type="unordered-list" style={iconStyles} />}
-          placeholder="New task..."
+          prefix={<Icon type='unordered-list' style={iconStyles} />}
+          placeholder='New task...'
           onChange={handleChange}
+          data-testid='form-input'
         />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button type='primary' htmlType='submit'>
           Create
         </Button>
       </Form.Item>

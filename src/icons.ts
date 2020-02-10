@@ -1,3 +1,7 @@
+export { default as CheckCircleTwoTone } from '@ant-design/icons/lib/twotone/CheckCircleTwoTone'
 export { default as CheckCircleOutline } from '@ant-design/icons/lib/outline/CheckCircleOutline'
-
+export { default as DeleteOutline } from '@ant-design/icons/lib/outline/DeleteOutline'
+export { default as LinkOutline } from '@ant-design/icons/lib/outline/LinkOutline'
+export { default as EditOutline } from '@ant-design/icons/lib/outline/EditOutline'
+export { default as CheckOutline } from '@ant-design/icons/lib/outline/CheckOutline'
 export { default as UnorderedListOutline } from '@ant-design/icons/lib/outline/UnorderedListOutline'

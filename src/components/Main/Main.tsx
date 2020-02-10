@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider, Layout, Row } from 'antd'
 import { layoutStyles } from './MainStyles'
 import FormContainer from '../../containers/FormContainer'
-import ListContainer from '../../containers/ListContainer'
+import List from '../List'
 import DarkMode from '../DarkMode'
 import Filter from '../Filter'
 import { Strings } from '../../enums/strings'
@@ -19,7 +19,7 @@ export const Main = () => (
 
     <Divider>List of tasks</Divider>
     <Row type='flex' justify='center'>
-      <ListContainer />
+      <List />
     </Row>
 
     <Divider>{Strings.darkMode}</Divider>

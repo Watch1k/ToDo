@@ -4,7 +4,7 @@ exports[`Header component Matches snapshot 1`] = `
 <DocumentFragment>
   <header
     data-testid="header"
-    style="padding: 30px; display: flex; justify-content: center;"
+    style="padding: 30px; display: flex; justify-content: center; background: transparent;"
   >
     <h1
       class="ant-typography"

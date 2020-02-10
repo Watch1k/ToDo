@@ -1,20 +1,29 @@
 import React from 'react'
 import { List } from 'antd'
-import { IListProps } from '../../containers/ListContainer'
 import Item from '../Item'
+import { useListConnect } from '../../useConnect'
 
-const ToDoList = (props: IListProps) => (
-  <List>
-    {props.todos.map(item => (
-      <Item
-        key={item.id}
-        item={item}
-        editTodo={props.editTodo}
-        toggleTodo={props.toggleTodo}
-        deleteTodo={props.deleteTodo}
-      />
-    ))}
-  </List>
-)
+const ToDoList = () => {
+  const {
+    todos,
+    deleteTodoDispatch,
+    editTodoDispatch,
+    toggleTodoDispatch,
+  } = useListConnect()
+
+  return (
+    <List data-testid='list'>
+      {todos.map(item => (
+        <Item
+          key={item.id}
+          item={item}
+          editTodoDispatch={editTodoDispatch}
+          toggleTodoDispatch={toggleTodoDispatch}
+          deleteTodoDispatch={deleteTodoDispatch}
+        />
+      ))}
+    </List>
+  )
+}
 
 export default ToDoList
