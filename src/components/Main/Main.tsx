@@ -8,8 +8,8 @@ import Filter from '../Filter'
 import { Strings } from '../../enums/strings'
 
 export const Main = () => (
-  <Layout style={layoutStyles}>
-    <Divider>Create task</Divider>
+  <Layout style={layoutStyles} data-testid='main'>
+    <Divider>{Strings.mainCreateTusk}</Divider>
     <Row type='flex' justify='center'>
       <FormContainer />
     </Row>
@@ -17,7 +17,7 @@ export const Main = () => (
       <Filter />
     </Row>
 
-    <Divider>List of tasks</Divider>
+    <Divider>{Strings.mainListOfTasks}</Divider>
     <Row type='flex' justify='center'>
       <List />
     </Row>
