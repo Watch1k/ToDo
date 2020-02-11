@@ -7,7 +7,7 @@ import DarkMode from '../DarkMode'
 import Filter from '../Filter'
 import { Strings } from '../../enums/strings'
 
-export const Main = () => (
+const Main = () => (
   <Layout style={layoutStyles} data-testid='main'>
     <Divider>{Strings.mainCreateTusk}</Divider>
     <Row type='flex' justify='center'>
