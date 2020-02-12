@@ -3,4 +3,5 @@ export enum Strings {
   darkMode = 'Dark Mode',
   mainCreateTusk = 'Create task',
   mainListOfTasks = 'List of tasks',
+  results = 'Results',
 }

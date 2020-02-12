@@ -4,4 +4,5 @@ export { default as DeleteOutline } from '@ant-design/icons/lib/outline/DeleteOu
 export { default as LinkOutline } from '@ant-design/icons/lib/outline/LinkOutline'
 export { default as EditOutline } from '@ant-design/icons/lib/outline/EditOutline'
 export { default as CheckOutline } from '@ant-design/icons/lib/outline/CheckOutline'
+export { default as SearchOutline } from '@ant-design/icons/lib/outline/SearchOutline'
 export { default as UnorderedListOutline } from '@ant-design/icons/lib/outline/UnorderedListOutline'

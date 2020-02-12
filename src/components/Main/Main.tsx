@@ -1,6 +1,6 @@
 import React from 'react'
 import { Divider, Layout, Row } from 'antd'
-import { layoutStyles } from './MainStyles'
+import { layoutMainStyles } from './MainStyles'
 import FormContainer from '../../containers/FormContainer'
 import List from '../List'
 import DarkMode from '../DarkMode'
@@ -8,7 +8,7 @@ import Filter from '../Filter'
 import { Strings } from '../../enums/strings'
 
 const Main = () => (
-  <Layout style={layoutStyles} data-testid='main'>
+  <Layout style={layoutMainStyles} data-testid='main'>
     <Divider>{Strings.mainCreateTusk}</Divider>
     <Row type='flex' justify='center'>
       <FormContainer />
