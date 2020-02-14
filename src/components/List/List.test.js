@@ -1,8 +1,8 @@
 import React from 'react'
-import { renderWithRedux } from '../../utils/tests'
 import List from './'
 import configureStore from 'redux-mock-store'
 import { fakeTask1, fakeTask2 } from '../../mocks'
+import { renderWithRedux } from '../../utils/tests'
 
 describe('Form component', () => {
   let wrapper
@@ -13,7 +13,7 @@ describe('Form component', () => {
   const store = mockStore(initialState)
 
   beforeEach(() => {
-    wrapper = renderWithRedux(<List />, store)
+    wrapper = renderWithRedux(<List todos={initialState.todos} />, store)
   })
 
   it('Renders', () => {

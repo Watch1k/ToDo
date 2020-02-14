@@ -50,7 +50,13 @@ const Item = (props: IProps) => {
         style={confirmStyles}
       />
     ) : (
-      <Button key='btn_2' icon='edit' onClick={handleEdit} style={editStyles} />
+      <Button
+        key='btn_2'
+        icon='edit'
+        data-testid='item-edit'
+        onClick={handleEdit}
+        style={editStyles}
+      />
     ),
     <Button
       key='btn_3'
@@ -79,9 +85,16 @@ const Item = (props: IProps) => {
       <List.Item.Meta
         title={
           isEdit ? (
-            <Input style={inputStyles} value={value} onChange={handleChange} />
+            <Input
+              style={inputStyles}
+              data-testid='item-input'
+              value={value}
+              onChange={handleChange}
+            />
           ) : (
-            <p style={inputStyles}>{value}</p>
+            <p data-testid='item-p' style={inputStyles}>
+              {value}
+            </p>
           )
         }
       />
