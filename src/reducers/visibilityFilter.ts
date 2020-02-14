@@ -3,9 +3,12 @@ import { IVisibilityFilterAction } from '../actions'
 import { VisibilityFilters } from '../constants'
 import { VisibilityFiltersEnum } from '../enums'
 
-const defaultState = VisibilityFilters.SHOW_ALL
+const defaultState = VisibilityFilters.SHOW_ACTIVE
 
-export const visibilityFilter = (state: IVisibilityFilter = defaultState, action: IVisibilityFilterAction) => {
+export const visibilityFilter = (
+  state: IVisibilityFilter = defaultState,
+  action: IVisibilityFilterAction
+) => {
   switch (action.visibilityFilter) {
     case VisibilityFiltersEnum.SHOW_ALL:
       return VisibilityFiltersEnum.SHOW_ALL

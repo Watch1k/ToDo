@@ -18,9 +18,9 @@ const Filter = () => {
   return (
     <Card title='Filter:' style={filterStyles}>
       <Radio.Group onChange={onChange} value={value}>
-        <Radio value={SHOW_ALL}>Show all</Radio>
-        <Radio value={SHOW_COMPLETED}>Show completed</Radio>
         <Radio value={SHOW_ACTIVE}>Show active</Radio>
+        <Radio value={SHOW_COMPLETED}>Show completed</Radio>
+        <Radio value={SHOW_ALL}>Show all</Radio>
       </Radio.Group>
     </Card>
   )

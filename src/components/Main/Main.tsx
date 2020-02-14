@@ -6,27 +6,32 @@ import List from '../List'
 import DarkMode from '../DarkMode'
 import Filter from '../Filter'
 import { Strings } from '../../enums/strings'
+import { useListConnect } from '../../useConnect'
 
-const Main = () => (
-  <Layout style={layoutMainStyles} data-testid='main'>
-    <Divider>{Strings.mainCreateTusk}</Divider>
-    <Row type='flex' justify='center'>
-      <FormContainer />
-    </Row>
-    <Row type='flex' justify='center' style={{ margin: '30px 0' }}>
-      <Filter />
-    </Row>
+const Main = () => {
+  const { todos } = useListConnect()
 
-    <Divider>{Strings.mainListOfTasks}</Divider>
-    <Row type='flex' justify='center'>
-      <List />
-    </Row>
+  return (
+    <Layout style={layoutMainStyles} data-testid='main'>
+      <Divider>{Strings.mainCreateTusk}</Divider>
+      <Row type='flex' justify='center'>
+        <FormContainer />
+      </Row>
+      <Row type='flex' justify='center' style={{ margin: '30px 0' }}>
+        <Filter />
+      </Row>
 
-    <Divider>{Strings.darkMode}</Divider>
-    <Row type='flex' justify='center' style={{ margin: '30px 0' }}>
-      <DarkMode />
-    </Row>
-  </Layout>
-)
+      <Divider>{Strings.mainListOfTasks}</Divider>
+      <Row type='flex' justify='center'>
+        <List todos={todos} />
+      </Row>
+
+      <Divider>{Strings.darkMode}</Divider>
+      <Row type='flex' justify='center' style={{ margin: '30px 0' }}>
+        <DarkMode />
+      </Row>
+    </Layout>
+  )
+}
 
 export default Main

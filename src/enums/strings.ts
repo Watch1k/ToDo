@@ -4,4 +4,5 @@ export enum Strings {
   mainCreateTusk = 'Create task',
   mainListOfTasks = 'List of tasks',
   results = 'Results',
+  search = 'Search',
 }

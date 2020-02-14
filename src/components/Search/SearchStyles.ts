@@ -8,6 +8,5 @@ export const autocompleteSearchStyles: React.CSSProperties = {
 export const layoutSearchStyles: React.CSSProperties = {
   ...layoutMainStyles,
   display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
+  alignItems: 'center',
 }

@@ -2,10 +2,14 @@ import React from 'react'
 import { List } from 'antd'
 import Item from '../Item'
 import { useListConnect } from '../../useConnect'
+import { ITodo } from '../../interfaces/state'
 
-const ToDoList = () => {
+interface IProps {
+  todos: ITodo[]
+}
+
+const ToDoList = ({ todos }: IProps) => {
   const {
-    todos,
     deleteTodoDispatch,
     editTodoDispatch,
     toggleTodoDispatch,
@@ -13,15 +17,19 @@ const ToDoList = () => {
 
   return (
     <List data-testid='list'>
-      {todos.map(item => (
-        <Item
-          key={item.id}
-          item={item}
-          editTodoDispatch={editTodoDispatch}
-          toggleTodoDispatch={toggleTodoDispatch}
-          deleteTodoDispatch={deleteTodoDispatch}
-        />
-      ))}
+      {todos.length ? (
+        todos.map(item => (
+          <Item
+            key={item.id}
+            item={item}
+            editTodoDispatch={editTodoDispatch}
+            toggleTodoDispatch={toggleTodoDispatch}
+            deleteTodoDispatch={deleteTodoDispatch}
+          />
+        ))
+      ) : (
+        <div style={{ textAlign: 'center' }}>No data</div>
+      )}
     </List>
   )
 }
