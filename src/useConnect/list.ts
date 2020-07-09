@@ -3,6 +3,7 @@ import { useCallback } from 'react'
 import { deleteTodo, editTodo, toggleTodo } from '../actions'
 import { IState } from '../interfaces/state'
 import { VisibilityFiltersEnum } from '../enums'
+import { createSelector } from 'reselect'
 
 export const useMapDispatchToProps = () => {
   const dispatch = useDispatch()
@@ -24,19 +25,39 @@ export const useMapDispatchToProps = () => {
   }
 }
 
+const selectTodos = (state: IState) => state.todos
+const selectVisibilityFilter = (state: IState) => state.visibilityFilter
+const todosSelector = createSelector([selectTodos, selectVisibilityFilter], (todos, visibilityFilter) => {
+  switch (visibilityFilter) {
+    case VisibilityFiltersEnum.SHOW_ALL:
+      return todos
+    case VisibilityFiltersEnum.SHOW_COMPLETED:
+      console.log('calculate1')
+      return todos.filter(todo => todo.completed)
+    case VisibilityFiltersEnum.SHOW_ACTIVE:
+      return todos.filter(todo => !todo.completed)
+    default:
+      return todos
+  }
+})
+
 export const useListConnect = () => {
-  const todos = useSelector(({ todos, visibilityFilter }: IState) => {
-    switch (visibilityFilter) {
-      case VisibilityFiltersEnum.SHOW_ALL:
-        return todos
-      case VisibilityFiltersEnum.SHOW_COMPLETED:
-        return todos.filter(todo => todo.completed)
-      case VisibilityFiltersEnum.SHOW_ACTIVE:
-        return todos.filter(todo => !todo.completed)
-      default:
-        return todos
-    }
-  })
+  const todos = useSelector(todosSelector)
+
+  // const todos = useSelector(({ todos, visibilityFilter }: IState) => {
+  //   switch (visibilityFilter) {
+  //     case VisibilityFiltersEnum.SHOW_ALL:
+  //       return todos
+  //     case VisibilityFiltersEnum.SHOW_COMPLETED:
+  //       console.log('calculate!')
+  //       freeze(1)
+  //       return todos.filter(todo => todo.completed)
+  //     case VisibilityFiltersEnum.SHOW_ACTIVE:
+  //       return todos.filter(todo => !todo.completed)
+  //     default:
+  //       return todos
+  //   }
+  // })
 
   return {
     todos,
