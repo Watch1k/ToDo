@@ -5,7 +5,6 @@ import { IState } from '../interfaces/state'
 
 export const useDarkModeConnect = () => {
   const dispatch = useDispatch()
-  console.log('omg')
   const darkMode = useSelector((state: IState) => state.darkMode)
   const setDarkModeDispatch = useCallback(
     darkMode => dispatch(setDarkMode(darkMode)),
