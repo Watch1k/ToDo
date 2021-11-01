@@ -8,6 +8,9 @@ import Content from './components/Content'
 import Nav from './components/Nav'
 
 const App: React.FC = () => {
+  'test'
+  'test'
+  'test'
   return (
     <Provider store={store}>
       <BrowserRouter>
