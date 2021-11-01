@@ -19,6 +19,8 @@ const Item = (props: IProps) => {
   const [value, setValue] = useState(item.text)
   const [completed, setCompleted] = useState(item.completed)
 
+  console.log('render Item!')
+
   const handleEdit = () => {
     setEdit(true)
   }
@@ -102,4 +104,4 @@ const Item = (props: IProps) => {
   )
 }
 
-export default React.memo(Item)
+export default Item
