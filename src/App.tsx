@@ -8,6 +8,7 @@ import Content from './components/Content'
 import Nav from './components/Nav'
 
 const App: React.FC = () => {
+  '/dsda'
   return (
     <Provider store={store}>
       <BrowserRouter>
